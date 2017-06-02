@@ -1,33 +1,33 @@
 defmodule Exeth.Eth do
-	import Exeth.Macros
+	use Exeth.Macros, namespace: "eth"
 
-	call "eth_protocolVersion", [], returns: :quantity
+	rpc protocolVersion(), returns: :quantity
 
-	call "eth_syncing", []
+	rpc syncing()
 
-	call "eth_coinbase", []
+	rpc coinbase()
 
-	call "eth_mining", []
+	rpc mining()
 
-	call "eth_hashrate", [], returns: :quantity
+	rpc hashrate(), returns: :quantity
 
-	call "eth_gasPrice", [], returns: :quantity
+	rpc gasPrice(), returns: :quantity
 
-	call "eth_accounts", []
+	rpc account()
 
-	call "eth_blockNumber", [], returns: :quantity
+	rpc blockNumber(), returns: :quantity
 
-	call "eth_getBalance", [address, tag], returns: :quantity
+	rpc getBalance(address, tag), returns: :quantity
 
-	call "eth_getStorageAt", [address, position, tag], returns: :quantity
+	rpc getStorageAt(address, position, tag), returns: :quantity
 
-	call "eth_getTransactionCount", [address, tag], returns: :quantity
+	rpc getTransactionCount(address, tag), returns: :quantity
 
-	call "eth_getBlockTransactionCountByHash", [block], returns: :quantity
+	rpc getBlockTransactionCountByHash(block), returns: :quantity
 
-	call "eth_getBlockTransactionCountByNumber", [block], returns: :quantity
-	
-	call "eth_getUncleCountByBlockHash", [block], returns: :quantity
+	rpc getBlockTransactionCountByNumber(block), returns: :quantity
 
-	call "eth_getCode", [address, tag], returns: :quantity
+	rpc getUncleCountByBlockHash(block), returns: :quantity
+
+	rpc getCode(address, tag), returns: :quantity
 end

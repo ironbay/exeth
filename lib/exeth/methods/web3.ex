@@ -1,8 +1,8 @@
 defmodule Exeth.Web3 do
-	import Exeth.Macros
+	use Exeth.Macros, namespace: "web3"
 
-	call "web3_clientVersion", [], returns: :string
+	rpc clientVersion(), returns: :string
 
-	call "web3_sha3", [body], returns: :string
+	rpc sha3(body), returns: :string
 
 end

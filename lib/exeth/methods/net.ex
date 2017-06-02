@@ -1,7 +1,7 @@
 defmodule Exeth.Net do
-	import Exeth.Macros
+	use Exeth.Macros, namespace: "net"
 
-	call "net_listening", [], returns: :boolean
+	rpc listening(), returns: :boolean
 
-	call "net_peerCount", [], returns: :quantity
+	rpc peer_count(), returns: :quantity
 end
