@@ -25,29 +25,29 @@ defmodule Exeth.Eth do
 
 	rpc getBlockTransactionCountByHash(block), returns: :quantity
 
-	rpc getBlockTransactionCountByNumber(block), returns: :quantity
+	rpc getBlockTransactionCountByNumber(tag), returns: :quantity
 
 	rpc getUncleCountByBlockHash(block), returns: :quantity
 
+	rpc getUncleCountByBlockNumber(block), returns: :quantity
+
 	rpc getCode(address, tag), returns: :quantity
 
-	rpc sign
+	rpc sign(address, message), returns: :string
 
-	rpc sendTransaction
+	rpc sendTransaction(transaction), returns: :string
 
-	rpc sendRawTransaction
+	rpc sendRawTransaction(signature), returns: :string
 
-	rpc call
+	rpc estimateGas(transaction), returns: :quantity
 
-	rpc estimateGas
+	rpc getBlockByHash(block, full), returns: :object_or_string
 
-	rpc getBlockByHash
+	rpc getBlockByNumber(tag, full), returns: :object_or_string
 
-	rpc getBlockByNumber
+	rpc getTransactionByHash(hash), returns: :object_or_nil
 
-	rpc getTransactionByHash
-
-	rpc getTransactionByBlockHashAndIndex
+	rpc getTransactionByBlockHashAndIndex(block, position), returns: :object_or_nil
 
 	rpc getTransactionByBlockNumberAndIndex
 
@@ -77,9 +77,9 @@ defmodule Exeth.Eth do
 
 	rpc getFilterLogs
 
-	rpc getLogs
+	rpc getLogs(filter), returns:
 
-	rpc getWork
+	rpc getWork(), returns: :list
 
 	rpc submitWork(data), returns: :boolean
 
