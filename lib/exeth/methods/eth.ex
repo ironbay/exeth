@@ -49,39 +49,39 @@ defmodule Exeth.Eth do
 
 	rpc getTransactionByBlockHashAndIndex(block, position), returns: :object_or_nil
 
-	rpc getTransactionByBlockNumberAndIndex
-
-	rpc getTransactionReceipt
-
-	rpc getUncleByBlockHashAndIndex
-
-	rpc getUncleByBlockNumberAndIndex
-
-	rpc getCompilers
-
-	rpc compileLLL
-
-	rpc compileSolidity
-
-	rpc compileSerpent
-
-	rpc newFilter
-
-	rpc newBlockFilter
-
-	rpc newPendingTransactionFilter
-
-	rpc uninstallFilter
-
-	rpc getFilterChanges
-
-	rpc getFilterLogs
-
-	rpc getLogs(filter), returns:
-
-	rpc getWork(), returns: :list
-
-	rpc submitWork(data), returns: :boolean
-
-	rpc submitHashrate(hashrate), returns: :boolean
+	# rpc getTransactionByBlockNumberAndIndex
+	#
+	# rpc getTransactionReceipt
+	#
+	# rpc getUncleByBlockHashAndIndex
+	#
+	# rpc getUncleByBlockNumberAndIndex
+	#
+	# rpc getCompilers
+	#
+	# rpc compileLLL
+	#
+	# rpc compileSolidity
+	#
+	# rpc compileSerpent
+	#
+	# rpc newFilter
+	#
+	# rpc newBlockFilter
+	#
+	# rpc newPendingTransactionFilter
+	#
+	# rpc uninstallFilter
+	#
+	# rpc getFilterChanges
+	#
+	# rpc getFilterLogs
+	#
+	# rpc getLogs(filter), returns:
+	#
+	# rpc getWork(), returns: :list
+	#
+	# rpc submitWork(data), returns: :boolean
+	#
+	# rpc submitHashrate(hashrate), returns: :boolean
 end
