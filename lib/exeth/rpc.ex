@@ -16,6 +16,7 @@ defmodule Exeth.RPC do
 	end
 
 	defp handle_response(response, options) do
+		IO.inspect(response)
 		case response do
 			%{ error: result } -> {:error, result}
 			%{ result: result } ->
@@ -24,15 +25,22 @@ defmodule Exeth.RPC do
 		end
 	end
 
+	defp parse_response(nil, _options), do: nil
+
 	defp parse_response(result, options) do
+		IO.inspect(result)
 		case options do
-			[returns: :quantity] ->
-				 <<"0x", rest::binary>> = result
-				 rest
-				 |> Base.decode16!
-				 |> :binary.decode_unsigned
+			returns: :quantity ->
+				result
+				|> decode
 			_ -> result
 		end
+	end
+
+	defp decode(input) do
+		<<"0x", rest::binary>> = input
+		{result, _} = Integer.parse(rest, 16)
+		result
 	end
 
 	defp payload(method, params, id) do
@@ -42,6 +50,7 @@ defmodule Exeth.RPC do
 			params: params,
 			id: id,
 		}
+		|> IO.inspect
 		|> Poison.encode!
 	end
 end
