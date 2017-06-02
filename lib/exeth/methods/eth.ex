@@ -13,7 +13,7 @@ defmodule Exeth.Eth do
 
 	rpc gasPrice(), returns: :quantity
 
-	rpc account()
+	rpc accounts()
 
 	rpc blockNumber(), returns: :quantity
 

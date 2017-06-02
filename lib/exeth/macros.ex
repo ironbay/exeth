@@ -35,6 +35,7 @@ defmodule Exeth.Macros do
 
 			def unquote(function_ex) do
 				{:ok, result} = unquote(name)(unquote_splicing(params))
+				result
 			end
 		end
 	end
