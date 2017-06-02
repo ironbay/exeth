@@ -3,5 +3,5 @@ defmodule Exeth.Net do
 
 	rpc listening(), returns: :boolean
 
-	rpc peer_count(), returns: :quantity
+	rpc peerCount(), returns: :quantity
 end
