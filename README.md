@@ -1,6 +1,5 @@
-# Ethereum
-
-**TODO: Add description**
+# Exeth
+An Elixir client for the Ethereum JSON RPC API
 
 ## Installation
 
@@ -9,7 +8,7 @@ by adding `ethereum` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:ethereum, "~> 0.1.0"}]
+  [{:exeth, "~> 0.1.0"}]
 end
 ```
 
