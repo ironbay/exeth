@@ -22,7 +22,6 @@ defmodule Exeth.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:sha3, "~> 2.0"},
       {:keccak, "~> 2.0"},
       {:httpoison, "~> 0.13"},
       {:poison, "~> 3.1"}
